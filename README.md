@@ -146,24 +146,6 @@ Food-Zaika/
 - Persistent cart data
 - Real-time cart updates
 
-## 🎨 Customization
-
-### **Theme Colors**
-The application uses a customizable color scheme. You can modify the colors in `tailwind.config.js`:
-
-```javascript
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#6366f1', // Indigo
-        secondary: '#8b5cf6', // Purple
-      }
-    }
-  }
-}
-```
-
 ### **Adding New Features**
 1. Create new components in `src/components/`
 2. Add routes in `src/App.jsx`
@@ -199,9 +181,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Portfolio: [Your Portfolio](https://yourportfolio.com)
+- GitHub: [@tabish-27]((https://github.com/tabish-27))
+- LinkedIn: [tabish-javed]((https://www.linkedin.com/in/tabish-javed/))
 
 ## 🙏 Acknowledgments
 
@@ -214,6 +195,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ⭐ **Star this repository if you found it helpful!**
 
----
+SCREENSHOT---
+<img width="2880" height="3452" alt="screenshot food" src="https://github.com/user-attachments/assets/23566e13-21fd-4122-9c4a-0dcaf2d5a930" />
+
 
 *Built with ❤️ using React, Vite, and Tailwind CSS* 
