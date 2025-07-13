@@ -174,15 +174,12 @@ The application includes Progressive Web App features:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@tabish-27]((https://github.com/tabish-27))
-- LinkedIn: [tabish-javed]((https://www.linkedin.com/in/tabish-javed/))
+- GitHub: [@tabish-27](https://github.com/tabish-27)
+- LinkedIn: [tabish-javed](https://www.linkedin.com/in/tabish-javed/)
+
 
 ## 🙏 Acknowledgments
 
