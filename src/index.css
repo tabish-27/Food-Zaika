@@ -1,6 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Pacifico&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animated gradient background for hero section */
+.animated-gradient-bg {
+  background: linear-gradient(270deg, #a5b4fc, #f472b6, #facc15, #818cf8, #f472b6, #a5b4fc);
+  background-size: 1200% 1200%;
+  animation: gradientMove 12s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero text typewriter animation */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #f472b6;
+  white-space: nowrap;
+  animation: typewriter 2.5s steps(40, end) 1s 1 normal both;
+}
+
+/* Shine effect for rating badge */
+@keyframes shine {
+  0% { background-position: -100px; }
+  100% { background-position: 200px; }
+}
+.shine {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
+  background-size: 200px 100%;
+  animation: shine 1.2s linear infinite;
+}
+
+/* Confetti for rating badge */
+@keyframes confetti {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-40px) scale(0.7); opacity: 0; }
+}
+.confetti {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #facc15;
+  animation: confetti 1s ease-in-out infinite;
+}
+
+/* Button glow */
+.glow-btn {
+  box-shadow: 0 0 16px 2px #f472b6, 0 0 32px 4px #818cf8;
+  transition: box-shadow 0.3s;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 32px 8px #f472b6, 0 0 64px 16px #818cf8;
+}
 
 /* Custom dark mode enhancements */
 .dark {
