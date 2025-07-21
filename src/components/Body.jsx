@@ -30,6 +30,11 @@ const getFeaturedRestaurants = (restaurants, count = 6) => {
     return restaurants?.filter(r => r.data.promoted || r.data.avgRating >= 4.2).slice(0, count);
 };
 
+// Helper to extract restaurant info regardless of structure
+function getRestaurantData(re) {
+    return re?.info || re?.data || re;
+}
+
 const Body = () => {
     const [noOfItems, setNoOfItems] = useState(4);
     const [searchText, setSearchText] = useState("");
@@ -93,8 +98,18 @@ const Body = () => {
                 setIsFiltered(false);
             } else {
                 const filtered = listOfRestaurants.filter((re) => {
-                    const restaurantData = re?.info || re;
-                    return restaurantData?.name?.toUpperCase()?.includes(searchText.toUpperCase());
+                    const restaurantData = getRestaurantData(re);
+                    const name = restaurantData?.name || "";
+                    const cuisines = (restaurantData?.cuisines || []).join(", ");
+                    const area = restaurantData?.area || restaurantData?.locality || "";
+                    const tags = (restaurantData?.tags || []).join(", ");
+                    const search = searchText.toLowerCase();
+                    return (
+                        name.toLowerCase().includes(search) ||
+                        cuisines.toLowerCase().includes(search) ||
+                        area.toLowerCase().includes(search) ||
+                        tags.toLowerCase().includes(search)
+                    );
                 });
                 setFilterListOfRestaurants(filtered);
                 setIsFiltered(true);
@@ -103,6 +118,15 @@ const Body = () => {
         }, 200);
         return () => clearTimeout(searchTimeout.current);
     }, [searchText, listOfRestaurants]);
+
+    // Listen for nav-search event from Navbar
+    useEffect(() => {
+        const handler = (e) => {
+            setSearchText(e.detail || "");
+        };
+        window.addEventListener("nav-search", handler);
+        return () => window.removeEventListener("nav-search", handler);
+    }, []);
 
     // Infinite scroll callback
     const loadMore = () => {
@@ -182,7 +206,7 @@ const Body = () => {
                         {
                             filterListOfRestaurants &&
                             filterListOfRestaurants.slice(0, displayCount).map((restaurant, index) => {
-                                const restaurantData = restaurant?.info || restaurant;
+                                const restaurantData = getRestaurantData(restaurant);
                                 const isLastElement = index === Math.min(displayCount, filterListOfRestaurants.length) - 1;
                                 return (
                                     <div key={restaurantData?.id} ref={isLastElement ? lastElementRef : null} className="transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-2xl">

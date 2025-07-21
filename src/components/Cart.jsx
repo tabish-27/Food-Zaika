@@ -67,11 +67,6 @@ const Cart = () => {
 
     useEffect(() => {
 
-        if (!loginToken) {
-            navigate("/login")
-        }
-
-
         const script = document.createElement("script");
         script.src = "https://checkout.razorpay.com/v1/checkout.js";
         script.async = true;
@@ -95,6 +90,11 @@ const Cart = () => {
                 <div className="parent w-full flex justify-center items-center bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pb-36 mt-5 min-h-screen transition-all duration-300">
                     <div className="childParent w-4/5 flex  justify-between  mt-8 max-[800px]:flex-col max-[800px]:w-full max-[800px]:justify-center max-[800px]:items-center gap-6">
                         <div className="left w-2/3  flex flex-col justify-center items-center max-[800px]:w-[90%] ">
+                            {/* Classic Cart Header */}
+                            <div className="w-full flex flex-col items-center mb-6">
+                                <span className="text-2xl font-serif font-bold text-[#bfa76a] tracking-wide mb-1">Your Cart</span>
+                                <span className="text-base font-serif text-gray-700 dark:text-gray-200 italic mb-2">“One cannot think well, love well, sleep well, if one has not dined well.”</span>
+                            </div>
                             <div className="topSticky bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm w-full z-10 max-[700px]:rounded-2xl lg:mb-6 shadow-xl border border-orange-200 dark:border-orange-400 transition-all duration-300">
                                 <div className="firstresNameDetails flex justify-between w-full p-6">
                                     <div className="left">

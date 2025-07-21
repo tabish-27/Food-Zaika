@@ -1,122 +1,69 @@
 import { useState } from "react";
-import { BsLockFill } from "react-icons/bs";
-import { BsUnlockFill } from "react-icons/bs";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const AboutMe = () => {
     const [activeItem, setActiveItem] = useState(null);
-
     const handleItemClick = (itemId) => {
-        if (activeItem === itemId) {
-            setActiveItem(null); // Collapse the clicked item if it's already active
-        } else {
-            setActiveItem(itemId); // Expand the clicked item
-        }
+        setActiveItem(activeItem === itemId ? null : itemId);
     };
-
-
-    const email = 'tabishjaved2030@gmail.com';
-    const subject = 'Regarding [Subject]';
-    const body = 'Hello,';
-
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    const handleEmailClick = () => {
-        window.location.href = mailtoLink;
-    };
-
     return (
-        <div className="main w-full flex flex-col justify-center items-center bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen py-8">
-            <div className="mainBodyRestaurantMenu w-full flex flex-col items-center lg:w-[60%] max-[800px]:px-3 ">
-                <div className="firstresNameDetails flex justify-between w-full px-2 my-4 lg:mx-10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-orange-200 dark:border-orange-400">
-                    <div className="left flex flex-col justify-center gap-2">
-                        <h1 className="name text-lg font-bold font-open max-[800px]:w-full md:text-2xl text-gray-800 dark:text-white">TABISH</h1>
-                        <p className="text-sm font-semibold text-gray-500 dark:text-gray-300">FRONTEND WEB DEVELOPER</p>
-                    </div>
-                    <div className="right flex flex-col justify-around bg-white/50 dark:bg-gray-700/50 items-center pr-2 rounded-xl p-2">
-                        <img className="w-20 rounded-full" src="/src/images/bgre.png" alt="Tabish" />
-                    </div>
+        <div className="w-full min-h-screen flex flex-col items-center justify-center bg-[#f8f6f1] dark:bg-[#181818] py-12 px-2">
+            <div className="w-full max-w-2xl bg-white dark:bg-[#232323] rounded-2xl shadow-xl border border-[#e5e2d8] dark:border-[#333] p-8 flex flex-col items-center">
+                <div className="flex flex-col items-center mb-8">
+                    <img className="w-28 h-28 rounded-full border-4 border-[#bfa76a] shadow-md mb-4" src="/src/images/bgre.png" alt="Tabish" />
+                    <h1 className="text-3xl font-serif font-bold text-[#222] dark:text-[#f8f6f1] tracking-wide mb-1">Tabish Javed</h1>
+                    <p className="text-lg font-serif text-[#bfa76a] dark:text-[#e5c97b] mb-2">Frontend Web Developer</p>
+                    <p className="text-base text-gray-600 dark:text-gray-300 text-center max-w-md">Engineering student & aspiring software developer passionate about full-stack web development and problem-solving. Experienced in React, Tailwind CSS, JavaScript, C++, and real-world projects like PicLingo (AI-powered image caption generator). 5-month DSA at CodeHelp, 150+ coding problems solved.</p>
                 </div>
-            </div>
-
-            <div className="ACCORDIANS w-[90%] mb-5 flex flex-col justify-center items-center gap-1 lg:mb-10">
-                <div
-                    className="flex justify-between items-center px-2 bg-gradient-to-r from-orange-500 to-red-500 dark:from-orange-600 dark:to-red-600 rounded-xl mb-2 w-full py-1 max-[800px]:px-2 lg:w-[70%] cursor-pointer hover:shadow-lg transition-all duration-300"
-                    onClick={() => handleItemClick("aboutme")}
-                >
-                    <span className="summary text-base pl-4 font-open font-bold py-1 lg:text-xl lg:p-3 text-white">ABOUT ME</span>
-                    <span className="pr-4 text-white">{activeItem === "aboutme" ? <BsUnlockFill /> : <BsLockFill />}</span>
-                </div>
-                {activeItem === "aboutme" && (
-                    <div className="flex mb-3 justify-center items-center font-sans bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl lg:w-[70%] border border-orange-200 dark:border-orange-400">
-                        <div className="content px-4 text-sm font-medium py-4 p-2 text-gray-700 dark:text-gray-200">
-                            I'm Tabish Javed, an engineering student and aspiring software developer passionate about full-stack web development and problem-solving. I have experience building projects using React, Tailwind CSS, JavaScript, and C++, with a growing focus on real-world applications like my recent project PicLingo, an AI-powered image caption generator.
-
-                            I've completed a 5-month DSA course at CodeHelp and solved 150+ coding problems.
-                        </div>
-                    </div>
-                )}
-                <div
-                    className="flex justify-between items-center px-2 bg-gradient-to-r from-orange-500 to-red-500 dark:from-orange-600 dark:to-red-600 rounded-xl mb-2 w-full py-1 max-[800px]:px-2 lg:w-[70%] cursor-pointer hover:shadow-lg transition-all duration-300"
-                    onClick={() => handleItemClick("skills")}
-                >
-                    <span className="summary text-base pl-4 font-open font-bold py-1 lg:text-xl lg:p-3 text-white">SKILLS</span>
-                    <span className="pr-4 text-white">{activeItem === "skills" ? <BsUnlockFill /> : <BsLockFill />}</span>
-                </div>
-                {activeItem === "skills" && (
-                    <div className="flex mb-3 justify-around items-center font-sans bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl lg:w-[70%] border border-orange-200 dark:border-orange-400">
-                        <div className="content px-4 text-sm p-2 flex justify-around flex-wrap gap-3 py-4">
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">REACT JS</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">JAVASCRIPT</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">TAILWIND</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">CSS3</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">HTML5</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">C & C++</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">DATA STRUCTURES & ALGORITHMS</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">DBMS</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">OS</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">COMPUTER NETWORK</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">GIT</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">GITHUB</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">OOPS</span>
-                            <span className="bg-gradient-to-r from-orange-100 to-yellow-100 dark:from-orange-900/50 dark:to-yellow-900/50 font-medium text-gray-700 dark:text-gray-200 rounded-md p-2 hover:bg-gradient-to-r hover:from-orange-200 hover:to-yellow-200 dark:hover:from-orange-800/70 dark:hover:to-yellow-800/70 transition-all duration-300 flex justify-center items-center lg:mx-5">PROBLEM SOLVING</span>
-                        </div>
-                    </div>
-                )}
-                <div
-                    className="flex justify-between items-center px-2 bg-gradient-to-r from-orange-500 to-red-500 dark:from-orange-600 dark:to-red-600 rounded-xl mb-2 w-full py-1 max-[800px]:px-2 lg:w-[70%] cursor-pointer hover:shadow-lg transition-all duration-300"
-                    onClick={() => handleItemClick("socials")}
-                >
-                    <span className="summary text-base pl-4 font-open font-bold py-1 lg:text-xl lg:p-3 text-white">SOCIALS</span>
-                    <span className="pr-4 text-white">{activeItem === "socials" ? <BsUnlockFill /> : <BsLockFill />}</span>
-                </div>
-                {activeItem === "socials" && (
-                    <div className="flex w-full mb-3 justify-center items-center font-sans bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl py-3 lg:w-[70%] border border-orange-200 dark:border-orange-400">
-                        <div className="content px-4 text-sm p-2 flex justify-around w-full">
-                            <Link to="https://www.linkedin.com/in/tabish-javed/" className="hover:scale-110 transition-transform duration-300"><img className="w-10" src="https://i.postimg.cc/ydvzTRdG/2504923.png" alt="LinkedIn" /></Link>
-                            <Link to="https://github.com/tabish-27" className="hover:scale-110 transition-transform duration-300"><img className="w-10" src="https://i.postimg.cc/DZbMSbGs/2504911.png" alt="GitHub" /></Link>
-                            <Link to="https://leetcode.com/u/Tabish_javed/" className="hover:scale-110 transition-transform duration-300"><img className="w-10" src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" /></Link>
-                            <a href="mailto:tabishjaved2030@gmail.com?subject=Hello%20Tabish&body=Hi%20Tabish,%0A%0AI%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards," className="hover:scale-110 transition-transform duration-300"><img className="w-10" src="https://i.postimg.cc/bNv1Lf6V/10829119.png" alt="Email" /></a>
+                {/* Classic Sections */}
+                <div className="w-full flex flex-col gap-4">
+                    {/* Skills */}
+                    <div className="border-b border-[#e5e2d8] dark:border-[#333] pb-4">
+                        <button className="w-full flex justify-between items-center py-2" onClick={() => handleItemClick("skills")}> 
+                            <span className="text-lg font-serif font-semibold text-[#222] dark:text-[#f8f6f1]">Skills</span>
+                            {activeItem === "skills" ? <BsChevronUp className="text-[#bfa76a]" /> : <BsChevronDown className="text-[#bfa76a]" />}
+                        </button>
+                        {activeItem === "skills" && (
+                            <div className="flex flex-wrap gap-2 mt-2">
+                                {["React JS","JavaScript","Tailwind","CSS3","HTML5","C & C++","DSA","DBMS","OS","Computer Network","Git","GitHub","OOPS","Problem Solving"].map(skill => (
+                                    <span key={skill} className="px-4 py-1 rounded-full border border-[#bfa76a] text-[#bfa76a] bg-[#faf8f3] dark:bg-[#232323] font-serif text-sm mb-1">{skill}</span>
+                                ))}
                             </div>
+                        )}
                     </div>
-                )}
-
-                <div
-                    className="flex justify-between items-center px-2 bg-gradient-to-r from-orange-500 to-red-500 dark:from-orange-600 dark:to-red-600 rounded-xl mb-2 w-full py-1 max-[800px]:px-2 lg:w-[70%] cursor-pointer hover:shadow-lg transition-all duration-300"
-                    onClick={() => handleItemClick("resume")}
-                >
-                    <span className="summary text-base pl-4 font-open font-bold py-1 lg:text-xl lg:p-3 text-white">RESUME</span>
-                    <span className="pr-4 text-white">{activeItem === "resume" ? <BsUnlockFill /> : <BsLockFill />}</span>
+                    {/* Socials */}
+                    <div className="border-b border-[#e5e2d8] dark:border-[#333] pb-4">
+                        <button className="w-full flex justify-between items-center py-2" onClick={() => handleItemClick("socials")}> 
+                            <span className="text-lg font-serif font-semibold text-[#222] dark:text-[#f8f6f1]">Socials</span>
+                            {activeItem === "socials" ? <BsChevronUp className="text-[#bfa76a]" /> : <BsChevronDown className="text-[#bfa76a]" />}
+                        </button>
+                        {activeItem === "socials" && (
+                            <div className="flex gap-6 mt-2 justify-center">
+                                <Link to="https://www.linkedin.com/in/tabish-javed/" className="hover:opacity-80" aria-label="LinkedIn"><img className="w-8" src="https://i.postimg.cc/ydvzTRdG/2504923.png" alt="LinkedIn" /></Link>
+                                <Link to="https://github.com/tabish-27" className="hover:opacity-80" aria-label="GitHub"><img className="w-8" src="https://i.postimg.cc/DZbMSbGs/2504911.png" alt="GitHub" /></Link>
+                                <Link to="https://leetcode.com/u/Tabish_javed/" className="hover:opacity-80" aria-label="LeetCode"><img className="w-8" src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" /></Link>
+                                <a href="mailto:tabishjaved2030@gmail.com?subject=Hello%20Tabish&body=Hi%20Tabish,%0A%0AI%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards," className="hover:opacity-80" aria-label="Email"><img className="w-8" src="https://i.postimg.cc/bNv1Lf6V/10829119.png" alt="Email" /></a>
+                            </div>
+                        )}
+                    </div>
+                    {/* Resume */}
+                    <div className="pb-2">
+                        <button className="w-full flex justify-between items-center py-2" onClick={() => handleItemClick("resume")}> 
+                            <span className="text-lg font-serif font-semibold text-[#222] dark:text-[#f8f6f1]">Resume</span>
+                            {activeItem === "resume" ? <BsChevronUp className="text-[#bfa76a]" /> : <BsChevronDown className="text-[#bfa76a]" />}
+                        </button>
+                        {activeItem === "resume" && (
+                            <div className="flex flex-col items-center mt-2">
+                                <a className="w-full flex justify-center" href="/src/RESUME/RESUME.pdf" download="RESUME.pdf">
+                                    <button className="flex items-center gap-2 border border-[#bfa76a] text-[#bfa76a] font-serif px-6 py-2 rounded-lg hover:bg-[#faf8f3] dark:hover:bg-[#232323] transition-all duration-200">
+                                        <img className="w-5" src="https://i.postimg.cc/PqDG0cq1/1092004.png" alt="Resume" /> <span className="font-semibold text-base">Download Resume</span>
+                                    </button>
+                                </a>
+                            </div>
+                        )}
+                    </div>
                 </div>
-                {activeItem === "resume" && (
-                    <div className="flex w-full mb-3 justify-center items-center font-sans bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-2 rounded-xl lg:w-[70%] border border-orange-200 dark:border-orange-400">
-                        <div className="content px-4 text-sm p-2 w-full rounded-xl">
-                            <a className="flex justify-center items-center" href="/src/RESUME/RESUME.pdf" download="RESUME.pdf">
-                                <button className="flex justify-center gap-2 items-center bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-lg p-3 transition-all duration-300 hover:scale-105"><img className="w-6" src="https://i.postimg.cc/PqDG0cq1/1092004.png" alt="" /> <span className="font-semibold text-xl">Resume</span></button>
-                            </a>
-                        </div>
-                    </div>
-                )}
             </div>
         </div>
     )

@@ -19,27 +19,25 @@ const Loginn = () => {
 
 
     return (
-        <div className=" flex justify-center items-center bg-black/10">
-            <div className='login-main pt-16 flex max-h-[400px] my-8 justify-center items-center text-sociogram bg-black/20 rounded-xl'>
-                <div className="login-form-card lg:w-[30vw] xs:w-[400px] bg-secondary p-6 rounded-lg">
-                    <h1 className={'text-center text-3xl pb-4'}>Login</h1>
-                    <form onSubmit={loginHandler} className={'flex flex-col gap-3'}>
-                        <label htmlFor="email" className={'flex flex-col'}>
-                            Username
-                            <input required type="text" name={'username'} id={'username'} placeholder={'@johndoe'} className={'rounded-lg py-2 px-3 text-black bg-sociogram dark:bg-white'} />
-                        </label>
-                        <label htmlFor="password" className={'flex flex-col'}>
-                            Password
-                            <input required type="password" name={'password'} id={'password'} placeholder={'*******'} className={'rounded-lg py-2 px-3 text-black bg-sociogram dark:bg-white'} />
-                        </label>
-                        <label className="checkbox flex gap-2 items-center cursor-pointer">
-                            <input type="checkbox" name="remember" id="remember" className={'w-4 h-4'} />
-                            Remember Me
-                        </label>
-                        <button type={'button'} className={'bg-transparent border-2 font-semibold p-3 rounded-lg hover:bg-black/30'} onClick={() => dispatch(loginHandler())}>Guest Mode</button>
-                        <button type={'submit'} className={'bg-button p-3 rounded-lg text-white mb-10'}>Submit</button>
-                    </form>
-                </div>
+        <div className="min-h-screen flex justify-center items-center bg-[#f8f6f1] dark:bg-[#181818] py-12 px-2">
+            <div className="w-full max-w-md bg-white dark:bg-[#232323] rounded-2xl shadow-xl border border-[#e5e2d8] dark:border-[#333] p-8 flex flex-col items-center">
+                <h1 className="text-3xl font-serif font-bold text-[#222] dark:text-[#f8f6f1] tracking-wide mb-6">Login</h1>
+                <form onSubmit={loginHandler} className="w-full flex flex-col gap-5">
+                    <label htmlFor="username" className="flex flex-col gap-1 text-[#222] dark:text-[#f8f6f1] font-serif text-base">
+                        Username
+                        <input required type="text" name="username" id="username" placeholder="@johndoe" className="rounded-lg py-2 px-3 text-[#222] bg-[#faf8f3] dark:bg-[#232323] border border-[#bfa76a] focus:outline-none focus:border-[#bfa76a] font-serif" />
+                    </label>
+                    <label htmlFor="password" className="flex flex-col gap-1 text-[#222] dark:text-[#f8f6f1] font-serif text-base">
+                        Password
+                        <input required type="password" name="password" id="password" placeholder="*******" className="rounded-lg py-2 px-3 text-[#222] bg-[#faf8f3] dark:bg-[#232323] border border-[#bfa76a] focus:outline-none focus:border-[#bfa76a] font-serif" />
+                    </label>
+                    <label className="checkbox flex gap-2 items-center cursor-pointer text-[#222] dark:text-[#f8f6f1] font-serif">
+                        <input type="checkbox" name="remember" id="remember" className="w-4 h-4" />
+                        Remember Me
+                    </label>
+                    <button type="button" className="border border-[#bfa76a] text-[#bfa76a] font-serif px-6 py-2 rounded-lg hover:bg-[#faf8f3] dark:hover:bg-[#232323] transition-all duration-200" onClick={() => dispatch(loginHandler())}>Guest Mode</button>
+                    <button type="submit" className="bg-[#bfa76a] text-white font-serif px-6 py-2 rounded-lg hover:bg-[#a68d4a] transition-all duration-200">Submit</button>
+                </form>
             </div>
         </div>
     )

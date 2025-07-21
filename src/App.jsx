@@ -13,7 +13,7 @@ import Success from "./pages/Success";
 import Login from "./pages/Loginn";
 import { ThemeProvider } from "./utils/ThemeContext";
 import ErrorBoundary from "./components/ErrorBoundary";
-import PWAInstallPrompt from "./components/PWAInstallPrompt";
+import Offers from "./pages/Offers";
 
 
 const AboutME = lazy(() => import("./components/AboutMe"));
@@ -29,8 +29,7 @@ const App = () => {
               <Outlet />
             </main>
                       <Footer />
-          <PWAInstallPrompt />
-        </div>
+          </div>
         </ThemeProvider>
       </Provider>
     </ErrorBoundary>
@@ -50,6 +49,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/offers",
+        element: <Offers />,
       },
       {
         path: "/success",

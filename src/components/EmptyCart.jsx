@@ -30,12 +30,11 @@ const EmptyCart = () => {
             </div>
 
             :
-            <div className=" flex justify-center items-center bg-black/10">
+            <div className="min-h-screen flex justify-center items-center bg-black/10 py-16">
                 <div className='login-main flex max-h-[400px]  justify-center items-center text-sociogram bg-black/20 lg:rounded-xl'>
                     <div className="div flex justify-around gap-4 items-center m-10 flex-col ">
                         <img src="https://i.postimg.cc/yNJKjHfB/ezgif-com-video-to-gif.gif" alt="" />
                         <button onClick={() => navigate('/login')} className="bg-green-500 rounded-lg p-2 lg:text-xl font-semibold px-4">LOGIN TO VIEW</button>
-
                     </div>
                 </div>
             </div>

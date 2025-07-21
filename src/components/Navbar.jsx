@@ -24,6 +24,7 @@ const Navbar = () => {
     const { isDarkMode, toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
+    const [navSearch, setNavSearch] = useState("");
 
     useEffect(() => {
         const userDetails = JSON.parse(localStorage.getItem('user'))
@@ -53,13 +54,15 @@ const Navbar = () => {
                 </button>
             </li>
             <li>
-                <button
+                <Link
+                    to="/offers"
                     className={`flex items-center gap-2 px-3 py-1 rounded-full font-semibold hover:bg-gradient-to-r hover:from-indigo-400 hover:to-purple-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 ${isActive("/offers") ? "text-indigo-400 font-bold" : "text-white/90"}`}
                     aria-label="Offers"
+                    onClick={() => setMenuOpen(false)}
                 >
                     <PercentIcon className="text-base" />
                     <span className="hidden sm:inline">Offers</span>
-                </button>
+                </Link>
             </li>
             <li>
                 <Link
@@ -123,10 +126,24 @@ const Navbar = () => {
                     aria-label="Edit location"
                 >{customLocation}</button>
             )}
-            <div className="flex items-center gap-1 ml-3">
-                <SearchIcon className="text-lg text-indigo-400 dark:text-indigo-300" />
-                <span className="text-xs md:text-sm text-white font-semibold">Search</span>
-            </div>
+            {/* Real search input */}
+            <form className="flex items-center gap-1 ml-3" onSubmit={e => {
+                e.preventDefault();
+                // Fire a custom event to set homepage search
+                window.dispatchEvent(new CustomEvent("nav-search", { detail: navSearch }));
+                navigate("/");
+            }}>
+                <input
+                    type="text"
+                    value={navSearch}
+                    onChange={e => setNavSearch(e.target.value)}
+                    placeholder="Search..."
+                    className="text-xs md:text-sm text-slate-800 dark:text-slate-100 bg-white/80 dark:bg-slate-700 px-2 py-1 rounded-lg border border-indigo-200 dark:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 focus:ring-2 focus:ring-indigo-300 dark:focus:ring-indigo-500/30 shadow-sm w-24 md:w-32"
+                />
+                <button type="submit" className="flex items-center px-2 py-1 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-bold ml-1 hover:from-indigo-600 hover:to-purple-600 transition-all duration-200">
+                    <SearchIcon className="text-base" />
+                </button>
+            </form>
         </div>
     );
 
