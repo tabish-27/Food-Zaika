@@ -196,4 +196,4 @@ SCREENSHOT---
 <img width="2880" height="3452" alt="screenshot food" src="https://github.com/user-attachments/assets/23566e13-21fd-4122-9c4a-0dcaf2d5a930" />
 
 
-*Built with ❤️ using React, Vite, and Tailwind CSS* 
+*Built with ❤️ using React, JavaScript, Vite, and Tailwind CSS* 
