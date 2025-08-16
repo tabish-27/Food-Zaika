@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+
 import RestaurantCard from "./RestaurantCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -396,26 +398,52 @@ const Body = () => {
               })}
         </div>
       </div>
-      {/* Top Cuisines Section */}
-      <section className="w-full max-w-5xl mx-auto py-8 flex flex-col items-center gap-6">
-        <h2
-          className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2"
-          style={{ fontFamily: "Montserrat, sans-serif" }}
-        >
-          Top Cuisines
-        </h2>
-        <div className="flex flex-wrap gap-3 justify-center">
-          {getTopCuisines(listOfRestaurants || resList).map((cuisine) => (
-            <span
-              key={cuisine}
-              className="px-5 py-2 rounded-full bg-indigo-50 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200 font-semibold shadow-sm border border-indigo-100 dark:border-indigo-800 text-base hover:bg-indigo-100 dark:hover:bg-indigo-800 transition-all duration-200"
-              style={{ fontFamily: "Inter, Open Sans, sans-serif" }}
-            >
-              {cuisine}
-            </span>
-          ))}
-        </div>
-      </section>
+
+{/* Top Cuisines Section */}
+<section className="w-full max-w-5xl mx-auto py-8 flex flex-col items-center gap-6">
+  <motion.h2
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2"
+    style={{ fontFamily: "Montserrat, sans-serif" }}
+  >
+    Top Cuisines
+  </motion.h2>
+
+  <motion.div
+    className="flex flex-wrap gap-3 justify-center"
+    initial="hidden"
+    animate="visible"
+    variants={{
+      hidden: {},
+      visible: {
+        transition: { staggerChildren: 0.07 },
+      },
+    }}
+  >
+    {getTopCuisines(listOfRestaurants || resList).map((cuisine, idx) => (
+      <motion.span
+        key={cuisine}
+        variants={{
+          hidden: { opacity: 0, scale: 0.85 },
+          visible: { opacity: 1, scale: 1 },
+        }}
+        whileHover={{ scale: 1.08, boxShadow: "0px 4px 15px rgba(0,0,0,0.15)" }}
+        transition={{ type: "spring", stiffness: 300 }}
+        className="px-5 py-2 rounded-full text-white font-semibold shadow-md border border-white/20 text-base cursor-pointer"
+        style={{
+          fontFamily: "Inter, Open Sans, sans-serif",
+          background:
+            "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", // warm amber gradient
+        }}
+      >
+        {cuisine}
+      </motion.span>
+    ))}
+  </motion.div>
+</section>
+
       {/* Featured Restaurants Carousel */}
       <section className="w-full max-w-6xl mx-auto py-8 flex flex-col items-center gap-6">
         <h2
