@@ -26,7 +26,7 @@ const AboutMe = () => {
             Engineering student & aspiring software developer passionate about
             full-stack web development and problem-solving. Experienced in
             React.js, Javascript, Tailwind CSS, Redux, Material-UI, CSS, HTML,
-            C++, and real-world projects like CodeCompete, FoodZaika, PicLingo.
+            C++, Bootstrap, Typescript and real-world projects like CodeCompete, FoodZaika, PicLingo.
             5-month DSA at CodeHelp, 200+ coding problems solved.
           </p>
         </div>
