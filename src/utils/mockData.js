@@ -285,13 +285,13 @@ const resList = [
             "rainMode": "NONE",
             "thirdPartyAddress": false,
             "thirdPartyVendor": "",
-            "adTrackingID": "",
+            "adTrackingID": "cid=6808274~p=4~eid=00000188-5b61-9844-7628-d4c800140406",
             "badges": {
                 "imageBased": [],
                 "textBased": [],
                 "textExtendedBadges": []
             },
-            "lastMileTravelString": "1.7 kms",
+            "lastMileTravelString": "4.5 kms",
             "hasSurge": false,
             "aggregatedDiscountInfoV3": {
                 "header": "50% OFF",
@@ -312,7 +312,7 @@ const resList = [
                 "preferentialService": false,
                 "iconType": "EMPTY"
             },
-            "promoted": false,
+            "promoted": true,
             "avgRating": "4.0",
             "totalRatings": 10000,
             "new": false
@@ -450,7 +450,7 @@ const resList = [
                 "city": "kota"
             },
             "cityState": "48",
-            "address": "PROP, MOHIT MITTAL, CP-8,(GF), FRIENDS  PARADISE. INDRAVIHAR , Kota,Rajasthan-324005",
+            "address": "PROP, MOHIT MITTAL, CP-8,(GF), FRIENDS  PARADISE. INDRAVIHAR , Kota,Rajasthan-324005",
             "locality": "Indra Vihar",
             "parentId": 293229,
             "unserviceable": false,
@@ -774,6 +774,11 @@ const resList = [
             "select": false,
             "favorite": false,
             "tradeCampaignHeaders": [],
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
             "chain": [],
             "feeDetails": {
                 "fees": [
@@ -1704,339 +1709,6 @@ const resList = [
             "promoted": true,
             "avgRating": "4.2",
             "totalRatings": 5000,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "104923",
-            "name": "Pizza Palace",
-            "uuid": "40cb3b76-f9f6-475e-b59a-e129968cbff9",
-            "city": "48",
-            "area": "City Center",
-            "totalRatingsString": "5000+ ratings",
-            "cloudinaryImageId": "pizza-palace-image",
-            "cuisines": [
-                "Pizzas",
-                "Italian",
-                "Fast Food",
-                "Beverages"
-            ],
-            "tags": [],
-            "costForTwo": 40000,
-            "costForTwoString": "₹400 FOR TWO",
-            "deliveryTime": 30,
-            "minDeliveryTime": 30,
-            "maxDeliveryTime": 30,
-            "slaString": "30 MINS",
-            "lastMileTravel": 1.5,
-            "slugs": {
-                "restaurant": "pizza-palace-city-center",
-                "city": "kota"
-            },
-            "cityState": "48",
-            "address": "City Center, Kota",
-            "locality": "City Center",
-            "parentId": 275634,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
-                    {
-                        "name": "distance",
-                        "fee": 1900,
-                        "message": ""
-                    },
-                    {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
-                    },
-                    {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
-                    }
-                ],
-                "totalFees": 1900,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "1900",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "1.5 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "50% OFF",
-                "subHeader": "",
-                "discountTag": "FLAT DEAL",
-                "headerTypeV2": 0
-            },
-            "sla": {
-                "restaurantId": "104923",
-                "deliveryTime": 30,
-                "minDeliveryTime": 30,
-                "maxDeliveryTime": 30,
-                "lastMileTravel": 1.5,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "4.5",
-            "totalRatings": 3000,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "104924",
-            "name": "Burger House",
-            "uuid": "40cb3b76-f9f6-475e-b59a-e129968cbf10",
-            "city": "48",
-            "area": "Mall Road",
-            "totalRatingsString": "3000+ ratings",
-            "cloudinaryImageId": "burger-house-image",
-            "cuisines": [
-                "Burgers",
-                "Fast Food",
-                "American",
-                "Beverages"
-            ],
-            "tags": [],
-            "costForTwo": 20000,
-            "costForTwoString": "₹200 FOR TWO",
-            "deliveryTime": 20,
-            "minDeliveryTime": 20,
-            "maxDeliveryTime": 20,
-            "slaString": "20 MINS",
-            "lastMileTravel": 1.0,
-            "slugs": {
-                "restaurant": "burger-house-mall-road",
-                "city": "kota"
-            },
-            "cityState": "48",
-            "address": "Mall Road, Kota",
-            "locality": "Mall Road",
-            "parentId": 275635,
-            "unserviceable": false,
-            "veg": false,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
-                    {
-                        "name": "distance",
-                        "fee": 1900,
-                        "message": ""
-                    },
-                    {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
-                    },
-                    {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
-                    }
-                ],
-                "totalFees": 1900,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "1900",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "1.0 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "30% OFF",
-                "subHeader": "",
-                "discountTag": "FLAT DEAL",
-                "headerTypeV2": 0
-            },
-            "sla": {
-                "restaurantId": "104924",
-                "deliveryTime": 20,
-                "minDeliveryTime": 20,
-                "maxDeliveryTime": 20,
-                "lastMileTravel": 1.0,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "4.0",
-            "totalRatings": 2000,
-            "new": false
-        },
-        "subtype": "basic"
-    },
-    {
-        "type": "restaurant",
-        "data": {
-            "type": "F",
-            "id": "104925",
-            "name": "Sweet Corner",
-            "uuid": "40cb3b76-f9f6-475e-b59a-e129968cbf11",
-            "city": "48",
-            "area": "Station Road",
-            "totalRatingsString": "2000+ ratings",
-            "cloudinaryImageId": "sweet-corner-image",
-            "cuisines": [
-                "Desserts",
-                "Sweets",
-                "Ice Cream",
-                "Beverages"
-            ],
-            "tags": [],
-            "costForTwo": 15000,
-            "costForTwoString": "₹150 FOR TWO",
-            "deliveryTime": 15,
-            "minDeliveryTime": 15,
-            "maxDeliveryTime": 15,
-            "slaString": "15 MINS",
-            "lastMileTravel": 0.8,
-            "slugs": {
-                "restaurant": "sweet-corner-station-road",
-                "city": "kota"
-            },
-            "cityState": "48",
-            "address": "Station Road, Kota",
-            "locality": "Station Road",
-            "parentId": 275636,
-            "unserviceable": false,
-            "veg": true,
-            "select": false,
-            "favorite": false,
-            "tradeCampaignHeaders": [],
-            "ribbon": [
-                {
-                    "type": "PROMOTED"
-                }
-            ],
-            "chain": [],
-            "feeDetails": {
-                "fees": [
-                    {
-                        "name": "distance",
-                        "fee": 1900,
-                        "message": ""
-                    },
-                    {
-                        "name": "time",
-                        "fee": 0,
-                        "message": ""
-                    },
-                    {
-                        "name": "special",
-                        "fee": 0,
-                        "message": ""
-                    }
-                ],
-                "totalFees": 1900,
-                "message": "",
-                "title": "Delivery Charge",
-                "amount": "1900",
-                "icon": ""
-            },
-            "availability": {
-                "opened": true,
-                "nextOpenMessage": "",
-                "nextCloseMessage": ""
-            },
-            "longDistanceEnabled": 0,
-            "rainMode": "NONE",
-            "thirdPartyAddress": false,
-            "thirdPartyVendor": "",
-            "adTrackingID": "",
-            "badges": {
-                "imageBased": [],
-                "textBased": [],
-                "textExtendedBadges": []
-            },
-            "lastMileTravelString": "0.8 kms",
-            "hasSurge": false,
-            "aggregatedDiscountInfoV3": {
-                "header": "25% OFF",
-                "subHeader": "",
-                "discountTag": "FLAT DEAL",
-                "headerTypeV2": 0
-            },
-            "sla": {
-                "restaurantId": "104925",
-                "deliveryTime": 15,
-                "minDeliveryTime": 15,
-                "maxDeliveryTime": 15,
-                "lastMileTravel": 0.8,
-                "lastMileDistance": 0,
-                "serviceability": "SERVICEABLE",
-                "rainMode": "NONE",
-                "longDistance": "NOT_LONG_DISTANCE",
-                "preferentialService": false,
-                "iconType": "EMPTY"
-            },
-            "promoted": true,
-            "avgRating": "4.3",
-            "totalRatings": 1500,
             "new": false
         },
         "subtype": "basic"
