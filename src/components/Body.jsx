@@ -323,32 +323,64 @@ const Body = () => {
         </Swiper>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="w-full max-w-5xl mx-auto py-12 flex flex-col items-center gap-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
-          What Our Customers Say
+         {/* What Our Customers Say*/}
+    <section className="w-full max-w-7xl mx-auto py-12 flex flex-col items-center gap-8 px-4 
+        bg-gradient-to-br from-green-300 to-gray-500 dark:from-gray-900 dark:to-gray-800 rounded-2xl shadow-xl transition-all duration-300">
+        <h2
+            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center"
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+        >
+            What Our Customers Say
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center gap-3 p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700"
-            >
-              <span className="text-4xl">{i === 1 ? "😍" : i === 2 ? "😋" : "👍"}</span>
-              <p className="text-slate-700 dark:text-slate-200 text-base font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-                {i === 1
-                  ? "Amazing food and super fast delivery! Highly recommend Food Zaika."
-                  : i === 2
-                  ? "Great variety of cuisines and easy to use app."
-                  : "Customer support is excellent. Will order again!"}
-              </p>
-              <span className="font-semibold text-indigo-600 dark:text-indigo-300" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                {i === 1 ? "Amit S." : i === 2 ? "Priya K." : "Rahul M."}
-              </span>
-            </div>
-          ))}
+        <p
+            className="text-lg text-gray-600 dark:text-gray-300 font-medium text-center max-w-2xl"
+            style={{ fontFamily: "Inter, sans-serif" }}
+        >
+            Don't just take our word for it. Hear what our happy customers have to say about their experience.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            {[
+                {
+                    emoji: "💚",
+                    text: "Absolutely love the fresh food and quick delivery! The quality is top-notch, and the app is so easy to use. Highly recommended!",
+                    author: "Priya Sharma"
+                },
+                {
+                    emoji: "😋",
+                    text: "The best food delivery service in town. The variety is amazing, and every meal I've ordered has been delicious and arrived hot.",
+                    author: "Rahul Singh"
+                },
+                {
+                    emoji: "✨",
+                    text: "Fantastic service! The customer support is excellent, and the offers are a great bonus. My go-to for all food cravings.",
+                    author: "Ananya Gupta"
+                },
+            ].map((testimonial, index) => (
+                <div
+                    key={index}
+                    className="flex flex-col items-center justify-between gap-4 p-6 
+                        bg-white dark:bg-gray-800 
+                        rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700
+                        transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                >
+                    <span className="text-5xl mb-2">{testimonial.emoji}</span>
+                    <p
+                        className="text-gray-700 dark:text-gray-200 text-center text-base font-medium flex-grow"
+                        style={{ fontFamily: "Inter, sans-serif" }}
+                    >
+                        "{testimonial.text}"
+                    </p>
+                    <span
+                        className="font-semibold text-indigo-600 dark:text-indigo-300 mt-4"
+                        style={{ fontFamily: "Montserrat, sans-serif" }}
+                    >
+                        - {testimonial.author}
+                    </span>
+                </div>
+            ))}
         </div>
-      </section>
+    </section>
+
     </div>
   );
 };
