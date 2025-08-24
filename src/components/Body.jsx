@@ -353,7 +353,7 @@ const Body = () => {
                 {
                     emoji: "✨",
                     text: "Fantastic service! The customer support is excellent, and the offers are a great bonus. My go-to for all food cravings.",
-                    author: "Ananya Gupta"
+                    author: "Ananya Mishra"
                 },
             ].map((testimonial, index) => (
                 <div
