@@ -90,9 +90,10 @@ const Body = () => {
   if (!listOfRestaurants) return <ShimmerBody />;
 
   return (
-    <div className="parent w-full lg:mb-5">
-      {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center py-16 bg-white dark:bg-slate-900 transition-all duration-300 mb-8 border-b border-slate-200 dark:border-slate-700">
+    // Applied the gradient background to the outermost div
+    <div className="w-full min-h-screen bg-gradient-to-br from-green-300 to-gray-500 dark:from-gray-900 dark:to-gray-800">
+      {/* Hero Section - Background changed to transparent to show the main gradient */}
+      <section className="w-full flex flex-col items-center justify-center py-16 bg-transparent dark:bg-transparent transition-all duration-300 mb-8 border-b border-slate-200 dark:border-slate-700">
         <h1 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-white mb-4 text-center tracking-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
           Discover Delicious Food Near You
         </h1>
@@ -116,7 +117,8 @@ const Body = () => {
           </a>
         </div>
       </section>
-      {/* How it Works Section with Food Background */}
+
+      {/* How it Works Section with Food Background - No changes needed as it has its own background */}
       <section id="how-it-works" className="relative w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
@@ -323,64 +325,63 @@ const Body = () => {
         </Swiper>
       </section>
 
-         {/* What Our Customers Say*/}
-    <section className="w-full max-w-7xl mx-auto py-12 flex flex-col items-center gap-8 px-4 
-        bg-gradient-to-br from-green-300 to-gray-500 dark:from-gray-900 dark:to-gray-800 rounded-2xl shadow-xl transition-all duration-300">
+      {/* What Our Customers Say - Removed its specific background to use the main component's gradient */}
+      <section className="w-full max-w-7xl mx-auto py-12 flex flex-col items-center gap-8 px-4
+        bg-transparent dark:bg-transparent rounded-2xl shadow-xl transition-all duration-300">
         <h2
-            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
+          className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-center"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
         >
-            What Our Customers Say
+          What Our Customers Say
         </h2>
         <p
-            className="text-lg text-gray-600 dark:text-gray-300 font-medium text-center max-w-2xl"
-            style={{ fontFamily: "Inter, sans-serif" }}
+          className="text-lg text-gray-600 dark:text-gray-300 font-medium text-center max-w-2xl"
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
-            Don't just take our word for it. Hear what our happy customers have to say about their experience.
+          Don't just take our word for it. Hear what our happy customers have to say about their experience.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-            {[
-                {
-                    emoji: "💚",
-                    text: "Absolutely love the fresh food and quick delivery! The quality is top-notch, and the app is so easy to use. Highly recommended!",
-                    author: "Priya Sharma"
-                },
-                {
-                    emoji: "😋",
-                    text: "The best food delivery service in town. The variety is amazing, and every meal I've ordered has been delicious and arrived hot.",
-                    author: "Rahul Singh"
-                },
-                {
-                    emoji: "✨",
-                    text: "Fantastic service! The customer support is excellent, and the offers are a great bonus. My go-to for all food cravings.",
-                    author: "Ananya Mishra"
-                },
-            ].map((testimonial, index) => (
-                <div
-                    key={index}
-                    className="flex flex-col items-center justify-between gap-4 p-6 
-                        bg-white dark:bg-gray-800 
-                        rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700
-                        transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                >
-                    <span className="text-5xl mb-2">{testimonial.emoji}</span>
-                    <p
-                        className="text-gray-700 dark:text-gray-200 text-center text-base font-medium flex-grow"
-                        style={{ fontFamily: "Inter, sans-serif" }}
-                    >
-                        "{testimonial.text}"
-                    </p>
-                    <span
-                        className="font-semibold text-indigo-600 dark:text-indigo-300 mt-4"
-                        style={{ fontFamily: "Montserrat, sans-serif" }}
-                    >
-                        - {testimonial.author}
-                    </span>
-                </div>
-            ))}
+          {[
+            {
+              emoji: "💚",
+              text: "Absolutely love the fresh food and quick delivery! The quality is top-notch, and the app is so easy to use. Highly recommended!",
+              author: "Priya Sharma"
+            },
+            {
+              emoji: "😋",
+              text: "The best food delivery service in town. The variety is amazing, and every meal I've ordered has been delicious and arrived hot.",
+              author: "Rahul Singh"
+            },
+            {
+              emoji: "✨",
+              text: "Fantastic service! The customer support is excellent, and the offers are a great bonus. My go-to for all food cravings.",
+              author: "Ananya Mishra"
+            },
+          ].map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-between gap-4 p-6
+                bg-white dark:bg-gray-800
+                rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700
+                transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <span className="text-5xl mb-2">{testimonial.emoji}</span>
+              <p
+                className="text-gray-700 dark:text-gray-200 text-center text-base font-medium flex-grow"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                "{testimonial.text}"
+              </p>
+              <span
+                className="font-semibold text-indigo-600 dark:text-indigo-300 mt-4"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
+                - {testimonial.author}
+              </span>
+            </div>
+          ))}
         </div>
-    </section>
-
+      </section>
     </div>
   );
 };
